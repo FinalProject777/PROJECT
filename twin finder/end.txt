@@ -1,0 +1,15 @@
+<div class="content">
+		<img src="#" alt="gif">
+		<h4>Game Over!</h4>
+		<p>The correct word was: <b>rainbow</b></p>
+		<button class="play-again">Play Again</button>
+	</div>
+
+
+    // Function to handle game completion
+function handleGameCompletion(isVictory) {
+    clearInterval(timer_observer);
+    if (isVictory) {
+        gameOverModal(true, moves, minutes, seconds);
+    } 
+}
