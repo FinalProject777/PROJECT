@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ADMessage">
+
+    <!-- Main content view -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ADMessage">
+
+        <!-- Your toolbar layout -->
+
+        <!-- RecyclerView for chat messages -->
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/my_primary"
+            android:padding="5dp"
+            android:paddingBottom="10dp">
+
+            <!-- Include your profile pic layout -->
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="38dp"
+                android:layout_height="37dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/my_primary"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/optlogo"
+                tools:ignore="TouchTargetSizeCheck"
+                />
+
+            <TextView
+                android:id="@+id/textViewHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/imageButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/almendra_sc"
+                android:text="MESSAGES"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <!-- Your bottom layout with EditText and ImageButton -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_layout"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="-1dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:padding="8dp"
+            android:id="@+id/bottom_layout">
+
+            <EditText
+                android:id="@+id/chat_message_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@id/message_send_btn"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="4dp"
+                android:hint="Write message here"
+                android:padding="10dp"
+                />
+
+            <ImageButton
+                android:id="@+id/message_send_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/icon_send"
+                app:tint="@color/my_primary"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- NavigationView for the drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/admain_menu"
+        tools:ignore="VisualLintBounds"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
