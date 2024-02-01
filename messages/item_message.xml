@@ -1,0 +1,31 @@
+<!-- res/layout/item_message.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="end"
+    android:longClickable="true">
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rounded_rectangle"
+        android:paddingBottom="8dp"
+        android:paddingEnd="53dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:text="Hi. How are you? Some random text here and here. I need to spend more time for android dev"
+        android:textColor="@android:color/black" />
+</LinearLayout>
+
+
+
+
+
+
+
+
